@@ -69,6 +69,59 @@
 
 # == YOUR CODE ==
 
+import re
 from datetime import datetime
 class PasswordManager2():
-    pass
+    def __init__(self):
+        self.passwords = {}
+
+    def add(self, name, password):
+        validated = self.validate(password)
+        if validated:
+            if password in self.passwords.values():
+                return None
+            else:
+                self.passwords[name] = password
+
+    def remove(self, string):
+        if string in self.passwords:
+            del self.passwords[string]
+
+    def update(self, name, password):
+        if name in self.passwords:
+            if password in self.passwords.values():
+                return None
+            else:
+                self.passwords.update({name: password})
+
+    def list_services(self):
+        return list(self.passwords.keys())
+
+    def sort_services_by(self, catagory, reverse=None):
+        if catagory == 'service':
+            if reverse:
+                return list(reversed(sorted(self.passwords.keys())))
+            else:
+                return sorted(self.passwords.keys())
+        elif catagory == 'added_on':
+            if reverse:
+                return list(reversed(self.passwords.keys()))
+            else:
+                return list(self.passwords.keys())
+
+    def get_for_service(self, string):
+        try:
+            return self.passwords[string]
+        except KeyError:
+            return None
+        except Exception as e:
+            print (e)
+
+    # Validates the passwords given to add to the dictionary
+    def validate(self, password):
+        if len(password) < 7:
+            return False
+        elif re.search("[!@$%&]",password) is None:
+            return False
+        else:
+            return True

@@ -58,7 +58,17 @@
 #   'Good night, Bobby!'
 #   > greeter.good_morning('Bobby')
 #   'Good morning, Bobby!'
-
+class Greeter():
+    def __init__(self):
+        pass
+    def hello(self, name):
+        return f'Hello, {name}!'
+    def goodbye(self, name):
+        return f'Goodbye, {name}!'
+    def good_night(self, name):
+        return f'Good night, {name}!'
+    def good_morning(self, name):
+        return f'Good morning, {name}!'
 
 
 # Class name: Basket
@@ -79,8 +89,13 @@
 #   > basket.add('orange')
 #   > basket.list_items()
 #   ['apple', 'banana', 'orange']
-
-
+class Basket():
+    def __init__(self):
+        self.items = []
+    def add(self, item):
+        self.items.append(item)
+    def list_items(self):
+        return self.items
 
 # Class name: Calculator
 # Purpose: perform simple calculations and track the history
@@ -114,7 +129,23 @@
 #   0.875
 #   > calculator.list_history()
 #   [3, 12, -1, 0.875]
-
+class Calculator():
+    def __init__(self):
+        self.history = []
+    def add(self, number1, number2):
+        self.history.append(number1+number2)
+        return number1 + number2
+    def multiply(self, number1, number2):
+        self.history.append(number1*number2)
+        return number1 * number2
+    def subtract(self, number1, number2):
+        self.history.append(number1-number2)
+        return number1 - number2
+    def divide(self, number1, number2):
+        self.history.append(number1/number2)
+        return number1 / number2
+    def list_history(self):
+        return self.history
 
 
 # Class name: Cohort
@@ -140,7 +171,15 @@
 #   [{'name' : 'Jo', 'employer' : 'NASA'}, {'name' : 'Alex', 'employer' : 'NASA'}, {'name' : 'Bobby', 'employer' : 'Google'}]
 #   > cohort.list_employed_by('NASA')
 #   [{'name' : 'Jo', 'employer' : 'NASA'}, {'name' : 'Alex', 'employer' : 'NASA'}]
-
+class Cohort():
+    def __init__(self):
+        self.data = []
+    def add_student(self, name):
+        self.data.append(name)
+    def list_students(self):
+        return self.data
+    def list_employed_by(self, word):
+        return [i for i in self.data if i['employer'] == word]
 
 
 # Class name: Person
@@ -176,5 +215,19 @@
 #   '10 South Street'
 #   > person.get_pets()
 #   'Alex has 3 pets: a cat called Arthur, a dog called Judith, a goldfish called Gwen'
-
-
+class Person():
+    def __init__(self, data):
+        self.data = data
+    def get_work_address(self):
+        for i in self.data['addresses']:
+            if i['name']  == 'work':
+                return f"{i['building']} {i['street']}"
+    def get_home_address(self):
+        for i in self.data['addresses']:
+            if i['name'] == 'home':
+                return f"{i['building']} {i['street']}"
+    def get_pets(self):
+        output = f"{self.data['name']} has 3 pets:"
+        for i in self.data['pets']:
+            output += f" a {i['animal']} called {i['name']},"
+        return output[:-1]

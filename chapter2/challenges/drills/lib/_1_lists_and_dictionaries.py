@@ -22,8 +22,8 @@
 # Example:
 #   Call:    first_element([1, 2, 3])
 #   Returns: 1
-
-
+def first_element(data):
+    return data[0]
 
 # Method name: second_element
 # Purpose: returns the second element of the given list
@@ -31,7 +31,8 @@
 # Example:
 #   Call:    second_element([1, 2, 3])
 #   Returns: 2
-
+def second_element(data):
+    return data[1]
 
 
 # Method name: last_element
@@ -40,7 +41,8 @@
 # Example:
 #   Call:    last_element([1, 2, 3])
 #   Returns: 3
-
+def last_element(data):
+    return data[-1]
 
 
 # Method name: first_two_elements
@@ -49,7 +51,8 @@
 # Example:
 #   Call:    first_two_elements([1, 2, 3])
 #   Returns: [1, 2]
-
+def first_two_elements(data):
+    return data[0:2]
 
 
 # Method name: first_three_elements
@@ -58,7 +61,8 @@
 # Example:
 #   Call:    first_three_elements([1, 2, 3, 4])
 #   Returns: [1, 2, 3]
-
+def first_three_elements(data):
+    return data[0:3]
 
 
 # Method name: total
@@ -67,8 +71,8 @@
 # Example:
 #   Call:    total([1, 2, 3])
 #   Returns: 6
-
-
+def total(data):
+    return sum(data)
 
 # Method name: lowest_number
 # Purpose: returns the lowest number in the given list
@@ -76,7 +80,8 @@
 # Example:
 #   Call:    lowest_number([4, 2, 6])
 #   Returns: 2
-
+def lowest_number(data):
+    return min(data)
 
 
 # Method name: highest_number
@@ -85,7 +90,8 @@
 # Example:
 #   Call:    highest_number([4, 6, 2])
 #   Returns: 6
-
+def highest_number(data):
+    return max(data)
 
 
 # Method name: the_beatles
@@ -94,7 +100,9 @@
 # Example:
 #   Call:    the_beatles()
 #   Returns: ['john', 'paul', 'george', 'ringo']
-
+def the_beatles():
+    names = ['john', 'paul', 'george', 'ringo']
+    return names
 
 
 # Method name: i_joined_the_beatles
@@ -103,7 +111,10 @@
 # Example:
 #   Call:    i_joined_the_beatles('yoko')
 #   Returns: ['john', 'paul', 'george', 'ringo', 'yoko']
-
+def i_joined_the_beatles(name):
+    temp = the_beatles() 
+    temp.append(name)
+    return temp
 
 
 # Method name: we_joined_the_beatles
@@ -112,7 +123,10 @@
 # Example:
 #   Call:    we_joined_the_beatles(['yoko', 'stuart'])
 #   Returns: ['john', 'paul', 'george', 'ringo', 'yoko', 'stuart']
-
+def we_joined_the_beatles(data):
+    temp = the_beatles()
+    temp += data
+    return temp
 
 
 # Method name: remove_nones_from_list
@@ -121,6 +135,13 @@
 # Example:
 #   Call:    remove_nones_from_list([1, None, 2, None, 3])
 #   Returns: [1, 2, 3]
+def remove_nones_from_list(data):
+    temp = []
+    for i in data:
+        if i is None:
+            continue
+        temp.append(i)
+    return temp
 
 
 
@@ -130,6 +151,8 @@
 # Example:
 #   Call:    double_list([1, 2, 3])
 #   Returns: [1, 2, 3, 1, 2, 3]
+def double_list(data):
+    return data + data
 
 
 
@@ -139,7 +162,8 @@
 # Example:
 #   Call:    unique_elements([1, 2, 1, 3, 2, 3])
 #   Returns: [1, 2, 3]
-
+def unique_elements(data):
+    return list(set(data))
 
 
 # Method name: add_to_list
@@ -148,8 +172,8 @@
 # Example:
 #   Call:    add_to_list(["a", "b", "c"], "d")
 #   Returns: ["a", "b", "c", "d"]
-
-
+def add_to_list(data, elem):
+    return data + [elem]
 
 # == DICTIONARY EXERCISES ==
 
@@ -160,8 +184,10 @@
 # Example:
 #   Call:    new_band_member({"bass": "flea"})
 #   Returns: {"vocalist": "miss piggy", "lead_guitar": "scooter", "bass": "flea"}
-
-
+def new_band_member(data):
+    temp = {"vocalist": "miss piggy", "lead_guitar": "scooter"}
+    temp.update(data)
+    return temp
 
 # Method name: all_values
 # Purpose: returns a list of all the values in the given dictionary
@@ -169,7 +195,8 @@
 # Example:
 #   Call:    all_values({"a": 1, "b": 2, "c": 3})
 #   Returns: [1, 2, 3]
-
+def all_values(data):
+    return data.values()
 
 
 # Method name: all_keys
@@ -178,7 +205,8 @@
 # Example:
 #   Call:    all_keys({"a": 1, "b": 2, "c": 3})
 #   Returns: ["a", "b", "c"]
-
+def all_keys(data):
+    return data.keys()
 
 
 # Method name: remove_nones_from_dictionary
@@ -187,7 +215,8 @@
 # Example:
 #   Call:    remove_nones_from_dictionary({"a": 1, "b": None, "c": 3})
 #   Returns: {"a": 1, "c": 3}
-
+def remove_nones_from_dictionary(data):
+    return {k: v for k, v in data.items() if v is not None}
 
 
 
@@ -197,4 +226,5 @@
 # Example:
 #   Call:    touch_in('Aldgate East', '2022/01/30 17:12')
 #   Returns: {'entrypoint': 'Aldgate East', 'time': '2022/01/30 17:12'}
-
+def touch_in(tube, time):
+    return {'entrypoint': tube, 'time': time}

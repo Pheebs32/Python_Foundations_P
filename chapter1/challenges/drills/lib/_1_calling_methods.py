@@ -25,7 +25,7 @@
 #   Returns: "HELLO WORLD"
 def block_caps_a_string(string):
     # your code goes here (delete the pass below)
-    pass
+    return string.upper()
 
 
 
@@ -35,7 +35,7 @@ def block_caps_a_string(string):
 #   Returns: "hello world"
 def lower_case_a_string(string):
     # your code goes here (delete the pass below)
-    pass
+    return string.lower()
 
 
 # Purpose: return the length of the string
@@ -44,7 +44,7 @@ def lower_case_a_string(string):
 #   Returns: 5
 def length_of_a_string(string):
     # your code goes here (delete the pass below)
-    pass
+    return len(string)
 
 
 # Purpose: return the string reversed
@@ -53,7 +53,7 @@ def length_of_a_string(string):
 #   Returns: "olleh"
 def reverse_a_string(string):
     # your code goes here (delete the pass below)
-    pass
+    return string[::-1]
 
 
 # Purpose: return the string with uppercase swapped to lowercase and vice versa
@@ -62,7 +62,7 @@ def reverse_a_string(string):
 #   Returns: "hELLO wORLD"
 def swap_the_case_of_a_string(string):
     # your code goes here (delete the pass below)
-    pass
+    return string.swapcase()
 
 
 # Purpose: checks if the number given is odd
@@ -73,7 +73,10 @@ def swap_the_case_of_a_string(string):
 #   Returns: False
 def is_integer_odd(integer):
     # your code goes here (delete the pass below)
-    pass
+    if integer%2 == 0:
+        return False
+    else:
+        return True
 
 
 # Purpose: checks if the number given is even
@@ -84,7 +87,10 @@ def is_integer_odd(integer):
 #   Returns: True
 def is_integer_even(integer):
     # your code goes here (delete the pass below)
-    pass
+    if integer%2 == 0:
+        return True
+    else:
+        return False
 
 
 # Purpose: converts an integer to a float
@@ -93,7 +99,7 @@ def is_integer_even(integer):
 #   Returns: 1.0
 def integer_to_float(integer):
     # your code goes here (delete the pass below)
-    pass
+    return float(integer)
 
 
 # Purpose: converts an integer to a string
@@ -102,7 +108,7 @@ def integer_to_float(integer):
 #   Returns: "1"
 def integer_to_string(integer):
     # your code goes here (delete the pass below)
-    pass
+    return str(integer)
 
 
 # Purpose: returns the integer one lower than the one given
@@ -111,7 +117,7 @@ def integer_to_string(integer):
 #   Returns: 3
 def return_one_lower(integer):
     # your code goes here (delete the pass below)
-    pass
+    return integer-1
 
 
 # Purpose: returns the integer one higher than the one given
@@ -120,7 +126,7 @@ def return_one_lower(integer):
 #   Returns: 5
 def return_one_higher(integer):
     # your code goes here (delete the pass below)
-    pass
+    return integer+1
 
 
 # Purpose: rounds a float up to the nearest integer
@@ -129,7 +135,8 @@ def return_one_higher(integer):
 #   Returns: 5
 def round_up(float):
     # your code goes here (delete the pass below)
-    pass
+    import math
+    return math.ceil(float)
 
 
 # Purpose: rounds a float down to the nearest integer
@@ -138,7 +145,8 @@ def round_up(float):
 #   Returns: 4
 def round_down(float):
     # your code goes here (delete the pass below)
-    pass
+    import math
+    return math.floor(float)
 
 
 # Purpose: converts a float to a string
@@ -147,7 +155,7 @@ def round_down(float):
 #   Returns: "1.0"
 def float_to_string(float):
     # your code goes here (delete the pass below)
-    pass
+    return str(float)
 
 
 # Purpose: converts a float to an integer
@@ -156,7 +164,7 @@ def float_to_string(float):
 #   Returns: 1
 def float_to_integer(float):
     # your code goes here (delete the pass below)
-    pass
+    return int(float)
 
 
 # Purpose: checks if a float is positive
@@ -167,7 +175,10 @@ def float_to_integer(float):
 #   Returns: False
 def float_is_positive(float):
     # your code goes here (delete the pass below)
-    pass
+    if float > 0:
+        return True
+    else:
+        return False
 
 
 # Purpose: checks if a float is negative
@@ -178,7 +189,10 @@ def float_is_positive(float):
 #   Returns: True
 def float_is_negative(float):
     # your code goes here (delete the pass below)
-    pass
+    if float < 0:
+        return True
+    else:
+        return False
 
 
 # Purpose: converts a boolean to a string
@@ -187,7 +201,7 @@ def float_is_negative(float):
 #   Returns: "True"
 def boolean_to_string(boolean):
     # your code goes here (delete the pass below)
-    pass
+    return str(boolean)
 
 
 # Congrats, you're done with this file. Move on to the next one.

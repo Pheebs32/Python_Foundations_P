@@ -220,13 +220,3 @@ def create_monthly_responses(filename):
             month = ''.join(month)
             with open(f'monthly_responses/{_date[1]}-{_date[2]}.csv', 'w') as f:
                 f.write(month)
-
-
-    # Give header
-    # Give Data
-    # next file
-    # return nothing
-
-
-
-create_monthly_responses('AirQuality.csv')

@@ -44,5 +44,28 @@
 
 # == YOUR CODE ==
 
+import re
 class PasswordManager():
-    pass
+    def __init__(self):
+        self.passwords = {}
+    def add(self, name, password):
+        validated = self.validate(password)
+        if validated:
+            self.passwords[name] = password
+    def get_for_service(self, string):
+        try:
+            return self.passwords[string]
+        except KeyError:
+            return None
+        except Exception as e:
+            print (e)
+    def list_services(self):
+        return self.passwords.keys()
+    # Validates the passwords given to add to the dictionary
+    def validate(self, password):
+        if len(password) < 7:
+            return False
+        elif re.search("[!@$%&]",password) is None:
+            return False
+        else:
+            return True
