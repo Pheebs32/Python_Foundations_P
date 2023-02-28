@@ -17,6 +17,15 @@
 
 # == YOUR CODE ==
 
+import re
 def is_valid(password):
-    pass # Your code goes here (delete the `pass`)
-
+    if len(password) < 7:
+        return False
+    elif re.search('[0-9]',password) is None:
+        return False
+    elif re.search('[A-Z]',password) is None:
+        return False
+    elif re.search('!@$%&!@$',password) is None:
+        return False
+    else:
+        return True
