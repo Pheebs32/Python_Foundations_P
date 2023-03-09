@@ -78,7 +78,7 @@ def starts_with_a_vowel(data):
         if i[0] in vowels:
             output.append(i)
     return output
-        
+
 
 
 # Method name: reverse_each_element
@@ -131,6 +131,7 @@ def greater_than(data, number):
         if i > number:
             output.append(i)
     return output
+
 # Method name: less_than
 # Purpose: returns only the elements that are less than the number provided
 # Arguments: one list and one number
@@ -261,6 +262,6 @@ def where_value_below(data, number):
 #   Call:    where_key_starts_with({'cat': 4, 'person': 2, 'centipede': 100}, 'c')
 #   Returns: {'cat': 4, 'centipede': 100}
 def where_key_starts_with(data, letter):
-        return {k:v for k, v in data.items() if (k[0] == letter)}
+    return {k:v for k, v in data.items() if (k[0] == letter)}
 
 
